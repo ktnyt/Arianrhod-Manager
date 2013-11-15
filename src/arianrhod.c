@@ -10,15 +10,15 @@ void run(char* dirname)
   int ch, x, y, i;
 
   curs_set(0);
+  draw_chara(dirname);
+  draw_stats(dirname);
+  draw_skill(dirname);
 
   x = 0;
   y = 0;
 
   for(;;)
     {
-      draw_chara(dirname);
-      draw_stats(dirname);
-      draw_skill(dirname);
       draw_controls(0);
       move_cursor(y);
       cbreak();
