@@ -24,7 +24,7 @@ void run(char* dirname)
       cbreak();
       noecho();
       ch = getch();
-      for(i = 0; i < COLS; ++i) mvaddch(24, i, ' ');
+      for(i = 0; i < COLS; ++i) mvaddch(LINES - 1, i, ' ');
       mvaddch(LINES - 1, COLS - 1, ch);
 
       if(ch == 'q') break;
