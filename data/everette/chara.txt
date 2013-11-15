@@ -1,0 +1,9 @@
+NAME    Everette
+MAIN    Mage
+SUB     Summoner
+SPEC    Eldanaan
+LEVEL   3
+EXP     14
+HP      33
+MP      61
+FATE    5

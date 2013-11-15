@@ -1,0 +1,9 @@
+Fortitude       1 P S S  0 0 1 MP+5
+Magicians_might 4 P A S  0 0 5 Magic_atk+SL(D)
+Monster_roar    1 P A S  0 0 1 Enemy_judge+1D
+Concentration   1 P A S  0 0 1 Magic_judge+1D
+Summon_Fafnir   1 M M C 20 9 1 Magic_atk_2D+5
+Relaxation      2 m A S  0 0 3 MP_recover_SLx20
+Sixth_sense     1 P A S  0 0 1 Ambush-1D
+Familiar        1 I A S  0 0 3 INT+5
+Force_bringer   2 P A S  0 0 5 N_Magic_atk+SLx4

@@ -1,0 +1,7 @@
+STR     7
+DEX     9
+AGI     9
+INT     14
+SEN     8
+SPI     14
+LUK     7

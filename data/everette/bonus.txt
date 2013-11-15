@@ -1,0 +1,7 @@
+STR     0
+DEX     0
+AGI     0
+INT     5
+SEN     0
+SPI     0
+LUK     0
