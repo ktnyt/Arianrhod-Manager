@@ -1,0 +1,7 @@
+ACU     -1
+ATK     2
+AVO     0
+DEF     6
+DUR     0
+SPD     0
+MOB     0

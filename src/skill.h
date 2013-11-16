@@ -4,6 +4,6 @@
 #include "parse.h"
 #include "parse.c"
 
-Pskill get_skill(char * dirname);
+skill get_skill(char * dirname);
 
 #endif

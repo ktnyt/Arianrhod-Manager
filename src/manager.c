@@ -1,11 +1,11 @@
 #include "manager.h"
 
-static chara  params_chara;
-static stats  params_stats;
-static stats  params_main;
-static stats  params_sub;
-static stats  params_bonus;
-static Pskill params_skill;
+static chara params_chara;
+static stats params_stats;
+static stats params_main;
+static stats params_sub;
+static stats params_bonus;
+static skill params_skill;
 static int pos = 0;
 static int max = 0;
 static int hp  = 0;
@@ -165,13 +165,20 @@ void draw_stats(char* dirname)
   int spddr = 0;
   int mobdr = 0;
 
-  mvprintw(1, 51, "Acu |% 3d |% 3d |% 3d |% 3d (%d)", acuba, acubo, acusk, acu, acudr);
-  mvprintw(2, 51, "Atk |% 3d |% 3d |% 3d |% 3d (%d)", atkba, atkbo, atksk, atk, atkdr);
-  mvprintw(3, 51, "Avo |% 3d |% 3d |% 3d |% 3d (%d)", avoba, avobo, avosk, avo, avodr);
-  mvprintw(4, 51, "Def |% 3d |% 3d |% 3d |% 3d (%d)", defba, defbo, defsk, def, defdr);
-  mvprintw(5, 51, "Dur |% 3d |% 3d |% 3d |% 3d (%d)", durba, durbo, dursk, dur, durdr);
-  mvprintw(6, 51, "Spd |% 3d |% 3d |% 3d |% 3d (%d)", spdba, spdbo, spdsk, spd, spddr);
-  mvprintw(7, 51, "Mob |% 3d |% 3d |% 3d |% 3d (%d)", mobba, mobbo, mobsk, mob, mobdr);
+  mvprintw(1, 51, "Acu |% 3d |% 3d |% 3d |% 3d (%d)",
+           acuba, acubo, acusk, acu, acudr);
+  mvprintw(2, 51, "Atk |% 3d |% 3d |% 3d |% 3d (%d)",
+           atkba, atkbo, atksk, atk, atkdr);
+  mvprintw(3, 51, "Avo |% 3d |% 3d |% 3d |% 3d (%d)",
+           avoba, avobo, avosk, avo, avodr);
+  mvprintw(4, 51, "Def |% 3d |% 3d |% 3d |% 3d (%d)",
+           defba, defbo, defsk, def, defdr);
+  mvprintw(5, 51, "Dur |% 3d |% 3d |% 3d |% 3d (%d)",
+           durba, durbo, dursk, dur, durdr);
+  mvprintw(6, 51, "Spd |% 3d |% 3d |% 3d |% 3d (%d)",
+           spdba, spdbo, spdsk, spd, spddr);
+  mvprintw(7, 51, "Mob |% 3d |% 3d |% 3d |% 3d (%d)",
+           mobba, mobbo, mobsk, mob, mobdr);
 
   attron(COLOR_PAIR(2));
   for(i = 0; i < 7; ++i) mvaddch(1 + i, 79, '|');
@@ -199,9 +206,10 @@ void draw_skill(char* dirname)
     {
       mvprintw(9 + i, 2, "%s", params_skill.array[i].name);
       mvprintw(9 + i, 18, "|% 02d | %s | %s | %s |% 3d | % 3d |% 2d | %s",
-               params_skill.array[i].level,  params_skill.array[i].type,  params_skill.array[i].judge,
-               params_skill.array[i].target, params_skill.array[i].range, params_skill.array[i].cost,
-               params_skill.array[i].max,    params_skill.array[i].text);
+               params_skill.array[i].level, params_skill.array[i].type,
+               params_skill.array[i].judge, params_skill.array[i].target,
+               params_skill.array[i].range, params_skill.array[i].cost,
+               params_skill.array[i].max,   params_skill.array[i].text);
     }
 
   attron(COLOR_PAIR(2));
@@ -306,7 +314,8 @@ void ndice()
 
   for(i = 0; i < COLS; ++i) mvaddch(LINES - 1, i, ' ');
   for(i = 0; i < 6; ++i) mvprintw(LINES - 1, i * 6, "%d:% 3d", i + 1, a[i]);
-  mvprintw(LINES - 1, 0, "%d: %d    %d: %d    %d: %d    %d: %d    %d: %d    %d: %d    Total: %d",
+  mvprintw(LINES - 1, 0, "%d: %d    %d: %d    %d: %d    %d: %d    %d: %d    "
+           "%d: %d    Total: %d",
            1, a[0], 2, a[1], 3, a[2], 4, a[3], 5, a[4], 6, a[5], n);
 }
 
@@ -461,18 +470,20 @@ int move_cursor(int y)
       for(j = 1; j < COLS - 1; ++j) mvaddch(9 + i, j, ' ');
       mvprintw(9 + i, 2, "%s", params_skill.array[i].name);
       mvprintw(9 + i, 18, "|% 02d | %s | %s | %s |% 3d | % 3d |% 2d | %s",
-               params_skill.array[i].level,  params_skill.array[i].type,  params_skill.array[i].judge,
-               params_skill.array[i].target, params_skill.array[i].range, params_skill.array[i].cost,
-               params_skill.array[i].max,    params_skill.array[i].text);
+               params_skill.array[i].level, params_skill.array[i].type,
+               params_skill.array[i].judge, params_skill.array[i].target,
+               params_skill.array[i].range, params_skill.array[i].cost,
+               params_skill.array[i].max,   params_skill.array[i].text);
     }
 
   attron(COLOR_PAIR(3));
   for(i = 1; i < COLS - 1; ++i) mvaddch(9 + y, i, ' ');
   mvprintw(9 + y, 2, "%s", params_skill.array[y].name);
   mvprintw(9 + y, 18, "|% 02d | %s | %s | %s |% 3d | % 3d |% 2d | %s",
-           params_skill.array[y].level,  params_skill.array[y].type,  params_skill.array[y].judge,
-           params_skill.array[y].target, params_skill.array[y].range, params_skill.array[y].cost,
-           params_skill.array[y].max,    params_skill.array[y].text);
+           params_skill.array[y].level, params_skill.array[y].type,
+           params_skill.array[y].judge, params_skill.array[y].target,
+           params_skill.array[y].range, params_skill.array[y].cost,
+           params_skill.array[y].max,   params_skill.array[y].text);
   attroff(COLOR_PAIR(3));
 
   return 1;

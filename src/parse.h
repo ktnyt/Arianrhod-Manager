@@ -4,7 +4,8 @@
 #include "types.h"
 
 pair parse_pair(FILE* fp);
-skill parse_line(char* line);
-skill parse_skill(FILE* fp);
+triplet parse_triplet(FILE* fp);
+char** parse_line(char* line);
+_skill parse_skill(FILE* fp);
 
 #endif

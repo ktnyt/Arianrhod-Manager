@@ -25,14 +25,12 @@ Character sheet syntax
 All files should be space separated.
 Sample files are included in the data/ directory.
 
-1. chara.txt
-Contains character basic information
+1. chara.txt - Contains character basic information
 
-2. stats.txt
-Contains status information
+2. stats.txt - Contains status information
 
-3. skill.txt
-Contains skill information
+3. skill.txt - Contains skill information
 
-4. bonus.txt
-Contains bonus stats infromation
+4. bonus.txt - Contains bonus stats infromation
+
+5. equip.txt - Contains equipment adjustment

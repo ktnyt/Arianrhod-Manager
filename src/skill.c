@@ -3,14 +3,14 @@
 
 #include "skill.h"
 
-Pskill get_skill(char* dirname)
+skill get_skill(char* dirname)
 {
-  skill* params_s = malloc(sizeof(skill));
+  _skill* params_s = malloc(sizeof(_skill));
 
   FILE* fp = NULL;
   char* filename = NULL;
-  skill tmp = {"", 0, 0, 0, 0, 0, 0, 0, "", 0};
-  Pskill ret;
+  _skill tmp = {"", 0, 0, 0, 0, 0, 0, 0, "", 0};
+  skill ret;
 
   int   i = 0;
 
@@ -27,7 +27,7 @@ Pskill get_skill(char* dirname)
     {
       tmp = parse_skill(fp);
       if(tmp.name != NULL)
-        params_s = realloc(params_s, (i + 1) * sizeof(skill));
+        params_s = realloc(params_s, (i + 1) * sizeof(_skill));
         params_s[i] = tmp;
         i++;
     }

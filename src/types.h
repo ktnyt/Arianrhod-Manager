@@ -8,6 +8,13 @@ typedef struct {
 } pair;
 
 typedef struct {
+  int   isEOF;
+  char* key;
+  char* val1;
+  char* val2;
+} triplet;
+
+typedef struct {
   char* name;
   char* main;
   char* sub;
@@ -30,12 +37,12 @@ typedef struct {
   int   max;
   char* text;
   int   isEOF;
-} skill;
+} _skill;
 
 typedef struct {
-  skill* array;
-  int    index;
-} Pskill;
+  _skill* array;
+  int     index;
+} skill;
 
 typedef struct {
   int str;
@@ -46,5 +53,15 @@ typedef struct {
   int spi;
   int luk;
 } stats;
+
+typedef struct {
+  int acu;
+  int atk;
+  int avo;
+  int def;
+  int dur;
+  int spd;
+  int mob;
+} equip;
 
 #endif

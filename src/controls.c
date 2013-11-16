@@ -26,7 +26,8 @@ void draw_help()
 {
   int i;
 
-  mvprintw(LINES - 1, 0, "h: Change HP\tm: Change MP\tf: Change Fate\td: Roll Dice");
+  mvprintw(LINES - 1, 0, "h: Change HP\tm: Change MP\tf: Change Fate\td: Roll"
+           " Dice\tq: Quit");
 }
 
 #endif

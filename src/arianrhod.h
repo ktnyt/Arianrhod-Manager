@@ -4,6 +4,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
+#include "logger.h"
 #include "chara.h"
 #include "chara.c"
 #include "parse.h"
